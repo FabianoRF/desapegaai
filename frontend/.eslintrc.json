@@ -31,10 +31,15 @@
     "rules": {
       "react-hooks/rules-of-hooks": "error",
       "no-use-before-define": "off",
+      "react/jsx-props-no-spreading": "off",
+      "@typescript-eslint/ban-types": "off",
+      "react/prop-types": "off",
       "react-hooks/exhaustive-deps": "warn",
+      "no-unused-expressions": "off",
       "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
       "import/prefer-default-export": "off",
       "prettier/prettier": "error",
+      "react/jsx-one-expression-per-line": "off",
       "import/extensions": [
         "error",
         "ignorePackages",
