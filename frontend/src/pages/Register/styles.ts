@@ -7,31 +7,6 @@ export const Container = styled.section`
   height: 100vh;
 `
 
-export const Header = styled.header`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 70px;
-
-  h1 {
-    font-size: 40px;
-  }
-
-  button {
-    background: transparent;
-    border: 0;
-
-    svg {
-      color: #fff;
-      transition: 0.2s;
-    }
-
-    &:hover svg {
-      color: ${shade(0.3, '#fff')};
-    }
-  }
-`
-
 export const Content = styled.section`
   background: #fff;
   flex: 1;
@@ -49,7 +24,7 @@ export const Content = styled.section`
       transition: color 0.2s;
 
       &:hover {
-        color: ${shade(0.3, '#7737FF')};
+        color: ${shade(0, '#ff872c')};
       }
     }
 
@@ -58,6 +33,13 @@ export const Content = styled.section`
     }
   }
 
+  h3 {
+    color: #000;
+    margin-bottom: 10px;
+  }
+
   section {
+    width: 600px;
+    margin: 20px auto;
   }
 `

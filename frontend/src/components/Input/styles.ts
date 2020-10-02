@@ -14,6 +14,7 @@ export const Container = styled.div<ContainerProps>`
   width: 100%;
 
   border-left: 5px solid #7737ff;
+  border: 1px solid #7737ff;
   color: #ff872c;
 
   display: flex;

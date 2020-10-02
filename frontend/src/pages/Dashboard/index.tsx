@@ -1,21 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import { FiPower } from 'react-icons/fi'
-
 import Item from '../../components/Item'
+import Header from '../../components/Header'
 
-import { Container, Header, Content } from './styles'
+import { Container, Content } from './styles'
 
 const Dashboard: React.FC = () => {
   return (
     <Container>
-      <Header>
-        <h1>Desapega aí</h1>
-        <button type='button'>
-          <FiPower size={40} />
-        </button>
-      </Header>
+      <Header />
 
       <Content>
         <header>
