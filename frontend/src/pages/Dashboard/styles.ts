@@ -40,3 +40,20 @@ export const Content = styled.section`
     margin: 20px 70px;
   }
 `
+export const Button = styled.button`
+  color: #fff;
+  background: #12a454;
+  border: 0;
+  width: 100%;
+  padding: 10px 20px;
+  margin: 10px auto;
+  transition: background 0.2s;
+
+  svg {
+    margin-right: 5px;
+  }
+
+  &:hover {
+    background: ${shade(0.1, '#878787')};
+  }
+`
