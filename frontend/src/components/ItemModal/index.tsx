@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react'
+import React, { useCallback } from 'react'
 
 import { FiX } from 'react-icons/fi'
 

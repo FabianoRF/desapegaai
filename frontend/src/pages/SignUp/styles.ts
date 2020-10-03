@@ -31,7 +31,7 @@ export const Content = styled.div`
   }
 
   a {
-    color: #ff872c;
+    color: #fff;
     text-decoration: none;
     margin-top: 10px;
     transition: color 0.2s;
@@ -40,12 +40,10 @@ export const Content = styled.div`
     align-items: center;
 
     &:hover {
-      color: ${shade(0.2, '#ff872c')};
+      color: ${shade(0, '#ff872c')};
     }
   }
 `
-
-export const Form = styled.form``
 
 export const IlustrationContainer = styled.div`
   flex: 1;

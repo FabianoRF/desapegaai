@@ -1,47 +1,39 @@
-import React, { useState, useCallback, useEffect } from 'react'
+import React, { useCallback } from 'react'
 
 import { FiX } from 'react-icons/fi'
 
 import { Container } from './styles'
 
-interface IModalProps {
-  isVisible: boolean
+export interface IModalProps {
   title: string
   description: string
+  color: 'red' | 'green'
+  onClose(): void
 }
 
 const MessageModal: React.FC<IModalProps> = ({
   title,
   description,
-  isVisible
+  color,
+  onClose
 }) => {
-  const [errorState, setErrorState] = useState(true)
-
-  const handleClickXButton = useCallback(() => {
-    setErrorState(!errorState)
-  }, [errorState])
-
-  useEffect(() => {
-    setErrorState(!errorState)
-  }, [isVisible])
+  const handleClickX = useCallback(() => {
+    onClose()
+  }, [onClose])
 
   return (
-    <>
-      {errorState && (
-        <Container>
-          <div>
-            <header>
-              <span>{title}</span>
-              <button type='button' onClick={handleClickXButton}>
-                <FiX size={25} />
-              </button>
-            </header>
+    <Container color={color}>
+      <div>
+        <header>
+          <span>{title}</span>
+          <button type='button' onClick={handleClickX}>
+            <FiX size={25} />
+          </button>
+        </header>
 
-            <p>{description}</p>
-          </div>
-        </Container>
-      )}
-    </>
+        <p>{description}</p>
+      </div>
+    </Container>
   )
 }
 

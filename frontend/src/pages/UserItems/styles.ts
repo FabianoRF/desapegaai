@@ -48,12 +48,24 @@ export const Button = styled.button`
   padding: 10px 20px;
   margin: 10px auto;
   transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+
+  & + button {
+    background: #ff4040;
+
+    &:hover {
+      background: ${shade(0.2, '#ff4040')};
+    }
+  }
 
   svg {
     margin-right: 5px;
   }
 
   &:hover {
-    background: ${shade(0.1, '#878787')};
+    background: ${shade(0.2, '#12a454')};
   }
 `

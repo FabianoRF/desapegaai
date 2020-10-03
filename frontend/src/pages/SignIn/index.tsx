@@ -25,7 +25,7 @@ const SignIn: React.FC = () => {
   const formRef = useRef<FormHandles>(null)
   const { signIn } = useAuth()
   const history = useHistory()
-  const [isMessageModal, setIsMessageModal] = useState(false)
+  const [isVisibleModal, setIsVisibleModal] = useState(false)
 
   const handleSubmit = useCallback(
     async (data: IFormData) => {
@@ -58,7 +58,7 @@ const SignIn: React.FC = () => {
           formRef.current?.setErrors(errors)
           return
         }
-        setIsMessageModal(true)
+        setIsVisibleModal(true)
       }
     },
     [history, signIn]
@@ -94,11 +94,14 @@ const SignIn: React.FC = () => {
           <img src={signInIlustration} alt='Sign-in' />
         </IlustrationContainer>
       </Container>
-      {isMessageModal && (
+      {isVisibleModal && (
         <MessageModal
           title='Erro'
-          isVisible
           description='Erro na autenticação, por favor confira sua credenciais.'
+          color='red'
+          onClose={() => {
+            setIsVisibleModal(false)
+          }}
         />
       )}
     </>

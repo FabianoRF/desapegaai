@@ -31,13 +31,13 @@ export const Content = styled.div`
   }
 
   a {
-    color: #ff872c;
+    color: #fff;
     text-decoration: none;
     margin-top: 10px;
     transition: color 0.2s;
 
     &:hover {
-      color: ${shade(0.2, '#ff872c')};
+      color: ${shade(0, '#ff872c')};
       text-decoration: underline;
     }
   }

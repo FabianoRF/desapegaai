@@ -1,6 +1,10 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-export const Container = styled.div`
+interface IModalProps {
+  color: 'red' | 'green'
+}
+
+export const Container = styled.div<IModalProps>`
   position: absolute;
   top: 0;
   background: rgba(0, 0, 0, 0.4);
@@ -12,9 +16,18 @@ export const Container = styled.div`
   justify-content: center;
 
   div {
-    width: 300px;
+    width: 400px;
     background: #fff;
     padding: 0 10px;
+
+    ${(props) =>
+      props.color === 'red'
+        ? css`
+            color: #c53030;
+          `
+        : css`
+            color: #12a454;
+          `}
 
     header {
       display: flex;
@@ -28,16 +41,14 @@ export const Container = styled.div`
         border: 0;
       }
 
-      span,
-      svg {
-        color: #c53030;
+      span {
+        font-weight: bold;
       }
     }
 
     p {
       font-size: 16px;
       padding: 20px 0;
-      color: #c53030;
     }
   }
 `
