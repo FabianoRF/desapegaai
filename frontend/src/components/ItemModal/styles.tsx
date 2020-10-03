@@ -1,8 +1,4 @@
-import styled, { css } from 'styled-components'
-
-interface IImageProps {
-  imageURL: string
-}
+import styled from 'styled-components'
 
 export const Container = styled.div`
   position: absolute;

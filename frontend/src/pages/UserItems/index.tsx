@@ -29,7 +29,7 @@ const UserItems: React.FC = () => {
             <Link to='/register'>Novo Item</Link>
           </header>
           <section>
-            <Item title='Bicicleta' value={32424.3}>
+            <Item title='Bicicleta' value={32424.3} image='adsf'>
               <Button type='button' onClick={handleVisibleModal}>
                 <FiMaximize2 size={16} />
                 Ver

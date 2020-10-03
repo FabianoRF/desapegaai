@@ -10,7 +10,7 @@ import signUpIlustration from '../../assets/signUpIlustration.svg'
 
 import { Container, Content, IlustrationContainer } from './styles'
 import getValidationErrors from '../../utils/getValidationErrors'
-import api from '../../services/api'
+import { api } from '../../services/api'
 
 import Button from '../../components/Button'
 import Input from '../../components/Input'

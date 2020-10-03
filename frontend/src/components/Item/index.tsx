@@ -2,16 +2,15 @@ import React from 'react'
 
 import { Container } from './styles'
 
-import bikeImg from '../../assets/bike.png'
-
 interface IItemProps {
   title: string
   value: number
+  image: string
 }
 
-const Item: React.FC<IItemProps> = ({ title, value, children }) => (
+const Item: React.FC<IItemProps> = ({ title, value, children, image }) => (
   <Container>
-    <img src={bikeImg} alt='bicicleta' />
+    <img src={image} alt={title} />
     <h3>{title}</h3>
     <span>R$ {value}</span>
 
