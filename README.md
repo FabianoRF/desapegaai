@@ -2,9 +2,8 @@
 
 
 <p align="center">
-  Desapegue do que só te ocupa espaço
+  <img src = "images/thumbnail.png" width=600>
 </p>
-
 
 ## Sumário
 
@@ -18,14 +17,11 @@
 Uma plataforma para anuncio de itens nos quais voce deseja desapegar. Nela é possivel fazer o login e cadastrar/excluir itens alem de ser possivel visualizar todos os itens dos demais usuários
 
 
-<p align="center">
-  <img src = "images/thumbnail.png" width=600>
-</p>
 O layout da aplicação está disponível <a href="https://www.figma.com/file/JnItPZghnqeik0AZxbIX4j/desapegaai?node-id=73%3A261" >aqui<a/> .
 
 
 
-O que voce pode fazer no desapega aí:
+**O que pode ser feito pelo usuário no desapega aí:**
 
 * Fazer seu cadastro com nome, email e senha
 * Fazer o Login
@@ -46,8 +42,9 @@ O que voce pode fazer no desapega aí:
 - `docker pull postgres` faz o download da imagem postgres
 - `docker run --name desapegaai -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres` inicia o container com o nome, porta e senhas configuradas no projeto atual
 - Apos a criação do container, basta criar uma base de dados com o nome de `desapegaai`
+- Todas configurações referentes a conexão com o banco de dados ficam disponíveis em `backend/ormconfig.json`
 
-
+<br/>
 
 OBS: Essas instruções foram passadas com base em um banco Postgres, vale lembrar que o TypeORM oferece suporte para variados tipos de bancos relacionais. Para estes casos, basta seguir a documentação oficial: <a href="https://typeorm.io/">TypeORM<a/> 
 
@@ -59,7 +56,7 @@ OBS: Essas instruções foram passadas com base em um banco Postgres, vale lembr
 - Abra a pasta backend `cd backend`.
 - Execute os seguintes comandos:
   - `yarn` para instalar as dependencias.
-  - `yarn typeorm migrate:latest` executa as migrations do typeorm que farão a criação de tabelas no banco de dados.
+  - `yarn typeorm migration:run` executa as migrations do typeorm que farão a criação de tabelas no banco de dados.
   - `yarn dev` inicia a aplicação em modo de desenvolvimento.
   - `yarn start` inicia a aplicação.
 
@@ -81,7 +78,7 @@ Para o Front-end e Back-end foi utilizado Typescript. No Back-end: Node + expres
   - `/item/:id` POST
   - `/item` GET
   
- - Paginas do Front:
+- Paginas do Front:
   - `sign-in` Página de Login
   - `sign-up` Página de cadastro
   - `dashboard` Página principal com todos itens para visualização
