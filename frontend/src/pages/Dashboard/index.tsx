@@ -38,7 +38,6 @@ const Dashboard: React.FC = () => {
         <ItemModal
           image={findedItem.image}
           title={findedItem.title}
-          seller='a completar'
           description={findedItem.description}
           price={findedItem.price}
           onClose={() => {

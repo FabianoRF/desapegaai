@@ -6,6 +6,7 @@ interface ContainerProps {
   isFocused: boolean
   isFilled: boolean
   isErrored: boolean
+  inputLocation?: string
 }
 
 export const Container = styled.div<ContainerProps>`
@@ -13,15 +14,24 @@ export const Container = styled.div<ContainerProps>`
   padding: 16px;
   width: 100%;
 
-  border-left: 5px solid #7737ff;
   color: #ff872c;
 
   display: flex;
   align-items: center;
 
+  ${(props) =>
+    props.inputLocation === '/register'
+      ? css`
+          border: 2px solid #7737ff;
+        `
+      : css`
+          border-left: 4px solid #7737ff;
+        `}
+
   & + div {
     margin-top: 8px;
   }
+
   ${(props) =>
     props.isErrored &&
     css`
@@ -39,6 +49,7 @@ export const Container = styled.div<ContainerProps>`
     css`
       color: #ff872c;
     `}
+
 
   input {
     background: transparent;

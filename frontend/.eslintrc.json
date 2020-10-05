@@ -30,6 +30,7 @@
     ],
     "rules": {
       "react-hooks/rules-of-hooks": "error",
+      "camelcase": "off",
       "no-use-before-define": "off",
       "react/jsx-props-no-spreading": "off",
       "@typescript-eslint/ban-types": "off",

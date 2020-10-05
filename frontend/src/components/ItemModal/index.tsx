@@ -7,7 +7,6 @@ import { Container, Content } from './styles'
 interface IModalProps {
   image: string
   title: string
-  seller: string
   description: string
   price: number
   onClose(): void
@@ -16,7 +15,6 @@ interface IModalProps {
 const MessageModal: React.FC<IModalProps> = ({
   image,
   title,
-  seller,
   description,
   price,
   onClose
@@ -38,9 +36,6 @@ const MessageModal: React.FC<IModalProps> = ({
         <h2>{title}</h2>
 
         <Content>
-          <p>
-            <strong>Vendedor:</strong> {seller}
-          </p>
           <p>
             <strong>Descrição:</strong> {description}
           </p>

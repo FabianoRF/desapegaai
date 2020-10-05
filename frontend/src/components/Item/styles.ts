@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  max-width: 250px;
+  width: 250px;
   background: #efefef;
   margin: 10px 20px;
 
@@ -9,9 +9,8 @@ export const Container = styled.div`
   flex-direction: column;
 
   img {
-    max-height: 270px;
+    max-height: 180px;
     width: 100%;
-    max-height: 400px;
     overflow: hidden;
   }
   h3,
@@ -20,7 +19,7 @@ export const Container = styled.div`
   }
 
   h3 {
-    font-size: 26px;
+    font-size: 20px;
     color: #000;
   }
 

@@ -1,19 +1,89 @@
-import React, { useCallback, useState } from 'react'
-
+import React, { useCallback, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-
 import { FiMaximize2, FiXCircle } from 'react-icons/fi'
 import { Container, Content, Button } from './styles'
+
 import Item from '../../components/Item'
 import Header from '../../components/Header'
 import ItemModal from '../../components/ItemModal'
 
+import { useAuth } from '../../hooks/authHook'
+import { api, baseUrl } from '../../services/api'
+
+interface IItem {
+  id: string
+  image: string
+  title: string
+  description: string
+  price: number
+}
+
 const UserItems: React.FC = () => {
   const [isVisibleModal, setIsVisibleModal] = useState(false)
+  const [items, setItems] = useState<IItem[]>([])
+  const [modalItemId, setModalItemId] = useState('')
+  const { token, user } = useAuth()
 
-  const handleVisibleModal = useCallback(() => {
+  const handleVisibleModal = useCallback((id) => {
     setIsVisibleModal(true)
+    setModalItemId(id)
   }, [])
+
+  const handleDisplayModal = useCallback(() => {
+    const findedItem = items.find((item) => item.id === modalItemId)
+
+    if (findedItem) {
+      return (
+        <ItemModal
+          image={findedItem.image}
+          title={findedItem.title}
+          description={findedItem.description}
+          price={findedItem.price}
+          onClose={() => {
+            setIsVisibleModal(false)
+          }}
+        />
+      )
+    }
+
+    return <h1>Erro</h1>
+  }, [items, modalItemId])
+
+  const handleExcludeItem = useCallback(
+    async (id: string) => {
+      await api.delete(`/item/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
+
+      const newItems = items.filter((item) => item.id !== id)
+      setItems(newItems)
+    },
+    [items, token]
+  )
+
+  useEffect(() => {
+    async function loadData() {
+      const response = await api.get('/item', {
+        headers: {
+          Authorization: `Bearer ${token}`
+        },
+        params: {
+          user_id: user.id
+        }
+      })
+
+      const responseItems: IItem[] = response.data.map((item: IItem) => ({
+        ...item,
+        image: `${baseUrl}/files/${item.image}`
+      }))
+
+      setItems(responseItems)
+    }
+
+    loadData()
+  }, [token, user])
 
   return (
     <>
@@ -29,31 +99,34 @@ const UserItems: React.FC = () => {
             <Link to='/register'>Novo Item</Link>
           </header>
           <section>
-            <Item title='Bicicleta' value={32424.3} image='adsf'>
-              <Button type='button' onClick={handleVisibleModal}>
-                <FiMaximize2 size={16} />
-                Ver
-              </Button>
-              <Button type='button'>
-                <FiXCircle size={16} />
-                Excluir
-              </Button>
-            </Item>
+            {items.map((item) => (
+              <Item
+                key={item.id}
+                title={item.title}
+                value={item.price}
+                image={item.image}
+              >
+                <Button
+                  type='button'
+                  onClick={() => handleVisibleModal(item.id)}
+                >
+                  <FiMaximize2 size={16} />
+                  Ver
+                </Button>
+                <Button
+                  type='button'
+                  onClick={() => handleExcludeItem(item.id)}
+                >
+                  <FiXCircle size={16} />
+                  Excluir
+                </Button>
+              </Item>
+            ))}
           </section>
         </Content>
       </Container>
-      {isVisibleModal && (
-        <ItemModal
-          image='https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'
-          title='titulo'
-          seller='Jonh Doe'
-          description='Uma bike bacana em excelente estado meu amigão'
-          price={123}
-          onClose={() => {
-            setIsVisibleModal(false)
-          }}
-        />
-      )}
+
+      {isVisibleModal && handleDisplayModal()}
     </>
   )
 }
