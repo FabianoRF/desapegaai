@@ -9,19 +9,21 @@
 ## Sumário
 
 - [Introdução](#Introdução)
-- [Como instalar](#Como instalar)
-- [Tecnologias utilizadas](#Tecnologias utilizadas)
+- [Instalação](#Instalação)
+- [Tecnologias](#Tecnologias)
 
 
 ## Introdução
 
 Uma plataforma para anuncio de itens nos quais voce deseja desapegar. Nela é possivel fazer o login e cadastrar/excluir itens alem de ser possivel visualizar todos os itens dos demais usuários
 
-O layout da aplicação está disponível <a href="https://www.figma.com/file/JnItPZghnqeik0AZxbIX4j/desapegaai?node-id=73%3A261" >aqui<a/> .
 
 <p align="center">
-  <img src = "images/thumbnail.png" width=350>
+  <img src = "images/thumbnail.png" width=600>
 </p>
+O layout da aplicação está disponível <a href="https://www.figma.com/file/JnItPZghnqeik0AZxbIX4j/desapegaai?node-id=73%3A261" >aqui<a/> .
+
+
 
 O que voce pode fazer no desapega aí:
 
@@ -33,17 +35,8 @@ O que voce pode fazer no desapega aí:
 * Cadastrar um novo item
 
 
-<p align="center">
-  <img src = "http://i.imgur.com/IkSnFRL.png" width=700>
-</p>
 
-<p align="center">
-  <img src = "http://i.imgur.com/0iorG20.png" width=700>
-</p>
-
-
-
-## Como instalar
+## Instalação
 
 **Banco de dados**
 
@@ -55,7 +48,9 @@ O que voce pode fazer no desapega aí:
 - Apos a criação do container, basta criar uma base de dados com o nome de `desapegaai`
 
 
-- OBS: Essas instruções foram passadas com base em um banco Postgres, vale lembrar que o TypeORM oferece suporte para variados tipos de bancos relacionais. Para estes casos, basta seguir a documentação oficial: <a href="https://typeorm.io/">TypeORM<a/> 
+
+OBS: Essas instruções foram passadas com base em um banco Postgres, vale lembrar que o TypeORM oferece suporte para variados tipos de bancos relacionais. Para estes casos, basta seguir a documentação oficial: <a href="https://typeorm.io/">TypeORM<a/> 
+
 
 
 **Back-end**
@@ -75,7 +70,7 @@ O que voce pode fazer no desapega aí:
   - `yarn start` inicia a aplicação.
 
 
-## Tecnologias utilizadas
+## Tecnologias
 
 Para o Front-end e Back-end foi utilizado Typescript. No Back-end: Node + express em conjunto com o TypeORM, e upload de arquivos de fotos com multer. No Front-End: React, styled-components, Yup e unForm para tratar formularios, além de Context API para gerenciar o contexto da Autenticação do usuário com JWT.
 
