@@ -2,7 +2,7 @@
 
 
 <p align="center">
-  <img src = "images/thumbnail.png" width=600>
+  <img src = "images/thumbnail.png" >
 </p>
 
 ## Sumário
