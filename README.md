@@ -59,7 +59,6 @@ OBS: Essas instruções foram passadas com base em um banco Postgres, vale lembr
   - `yarn` para instalar as dependencias.
   - `yarn typeorm migration:run` executa as migrations do typeorm que farão a criação de tabelas no banco de dados.
   - `yarn dev` inicia a aplicação em modo de desenvolvimento.
-  - `yarn start` inicia a aplicação.
 
 **Front-end**
 
