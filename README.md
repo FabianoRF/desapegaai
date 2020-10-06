@@ -67,6 +67,8 @@ OBS: Essas instruções foram passadas com base em um banco Postgres, vale lembr
 - Execute o comando:
   - `yarn start` inicia a aplicação.
 
+OBS: Algumas imagens foram deixadas no diretorio `images/test` como sugestoes para cadastro, fique a vontade para utilizar! 😀
+
 
 ## Tecnologias
 
