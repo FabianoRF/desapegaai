@@ -15,6 +15,8 @@ userRouter.post('/sign-in', async (request, response) => {
       email,
       password
     })
+
+    // @ts-ignore
     delete user.password
 
     return response.json({ user, token })
@@ -35,6 +37,7 @@ userRouter.post('/sign-up', async (request, response) => {
       password
     })
 
+    // @ts-ignore
     delete responseUser.password
 
     return response.json(responseUser)

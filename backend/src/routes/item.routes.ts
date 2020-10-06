@@ -16,7 +16,6 @@ const upload = multer(multerConfig)
 itemRouter.post('/', upload.single('image'), async (request, response) => {
   const { title, user_id, description, price } = request.body
 
-  console.log(' *** request: ', request.file)
   const image = request.file.filename
 
   const createItemService = new CreateItemService()

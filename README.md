@@ -9,7 +9,7 @@
 ## Sumário
 
 - [Introdução](#Introdução)
-- [Features](#features)
+- [Tecnologias utilizadas](#tecnologiasutilizadas)
 - [Feedback](#feedback)
 - [Contributors](#contributors)
 - [Build Process](#build-process)
@@ -22,6 +22,7 @@
 
 Uma plataforma para anuncio de itens nos quais voce deseja desapegar. Nela é possivel fazer o login e cadastrar/excluir itens alem de ser possivel visualizar todos os itens dos demais usuários
 
+https://www.figma.com/file/JnItPZghnqeik0AZxbIX4j/desapegaai?node-id=73%3A261
 
 <p align="center">
   <img src = "images/thumbnail.png" width=350>
@@ -79,3 +80,6 @@ O que voce pode fazer no desapega aí:
   - `yarn start` inicia a aplicação.
 
 
+## Tecnologias utilizadas
+
+Para o Front-end e Back-end foi utilizado Typescript. No Back-end: Node + express em conjunto com o TypeORM. No Front-End: React, styled-components, Yup e unForm para tratar formularios e  Context API para gerenciar o contexto da Autenticação com JWT.

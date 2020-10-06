@@ -43,6 +43,22 @@ export const Content = styled.div`
       color: ${shade(0, '#ff872c')};
     }
   }
+
+  @media (max-width: 700px) {
+    margin: 10px;
+
+    h1 {
+      font-size: 50px;
+    }
+
+    h2 {
+      font-size: 26px;
+    }
+
+    form {
+      width: 100%;
+    }
+  }
 `
 
 export const IlustrationContainer = styled.div`
@@ -54,4 +70,8 @@ export const IlustrationContainer = styled.div`
 
   background: #fff;
   background-size: cover;
+
+  @media (max-width: 700px) {
+    display: none;
+  }
 `

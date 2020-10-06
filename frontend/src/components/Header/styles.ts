@@ -25,4 +25,8 @@ export const Container = styled.header`
       color: ${shade(0.3, '#fff')};
     }
   }
+
+  @media (max-width: 700px) {
+    padding: 20px 10px;
+  }
 `

@@ -39,6 +39,19 @@ export const Content = styled.section`
     flex-wrap: wrap;
     margin: 20px 70px;
   }
+
+  @media (max-width: 700px) {
+    section {
+      margin: 10px 10px;
+    }
+
+    header {
+      justify-content: space-between;
+      a {
+        font-size: 16px;
+      }
+    }
+  }
 `
 export const Button = styled.button`
   color: #fff;

@@ -42,4 +42,18 @@ export const Content = styled.section`
     width: 600px;
     margin: 20px auto;
   }
+
+  @media (max-width: 700px) {
+    section {
+      padding: 0 10px;
+      width: 100%;
+    }
+
+    header {
+      justify-content: space-between;
+      a {
+        font-size: 16px;
+      }
+    }
+  }
 `

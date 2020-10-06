@@ -15,6 +15,7 @@ export const Content = styled.div`
 
   width: 100%;
   max-width: 600px;
+
   h1 {
     font-size: 66px;
   }
@@ -41,9 +42,23 @@ export const Content = styled.div`
       text-decoration: underline;
     }
   }
-`
 
-export const Form = styled.form``
+  @media (max-width: 700px) {
+    margin: 10px;
+
+    h1 {
+      font-size: 50px;
+    }
+
+    h2 {
+      font-size: 26px;
+    }
+
+    form {
+      width: 100%;
+    }
+  }
+`
 
 export const IlustrationContainer = styled.div`
   flex: 1;
@@ -54,4 +69,8 @@ export const IlustrationContainer = styled.div`
 
   background: #fff;
   background-size: cover;
+
+  @media (max-width: 700px) {
+    display: none;
+  }
 `

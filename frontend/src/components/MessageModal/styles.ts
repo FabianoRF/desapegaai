@@ -5,7 +5,7 @@ interface IModalProps {
 }
 
 export const Container = styled.div<IModalProps>`
-  position: absolute;
+  position: fixed;
   top: 0;
   background: rgba(0, 0, 0, 0.4);
   width: 100%;
@@ -16,9 +16,10 @@ export const Container = styled.div<IModalProps>`
   justify-content: center;
 
   div {
-    width: 400px;
+    max-width: 400px;
     background: #fff;
-    padding: 0 10px;
+    margin: 0 10px;
+    position: relative;
 
     ${(props) =>
       props.color === 'red'
@@ -34,7 +35,9 @@ export const Container = styled.div<IModalProps>`
       justify-content: space-between;
       align-items: center;
       border-bottom: 1px solid #efefef;
-      margin: 10px 0;
+      padding: 15px;
+
+      border-bottom: 1px solid #d3d3d3;
 
       button {
         background: transparent;
@@ -48,7 +51,7 @@ export const Container = styled.div<IModalProps>`
 
     p {
       font-size: 16px;
-      padding: 20px 0;
+      padding: 15px;
     }
   }
 `

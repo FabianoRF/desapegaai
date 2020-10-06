@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   background: rgba(0, 0, 0, 0.4);
   width: 100%;
@@ -15,10 +15,9 @@ export const Container = styled.div`
   div {
     background: #fff;
     width: 650px;
+    position: relative;
 
     section {
-      position: relative;
-
       img {
         width: 100%;
         max-height: 400px;
@@ -34,6 +33,15 @@ export const Container = styled.div`
 
     h2 {
       text-align: center;
+    }
+  }
+
+  @media (max-width: 700px) {
+    div {
+      width: 100%;
+    }
+    img {
+      max-height: 200px;
     }
   }
 `

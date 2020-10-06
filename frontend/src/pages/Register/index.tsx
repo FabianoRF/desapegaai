@@ -15,6 +15,7 @@ import Dropzone from '../../components/Dropzone'
 import getValidationErrors from '../../utils/getValidationErrors'
 import { api } from '../../services/api'
 import { useAuth } from '../../hooks/authHook'
+import MessageModal from '../../components/MessageModal'
 
 interface IData {
   user_id: string
@@ -27,6 +28,7 @@ const Register: React.FC = () => {
   const formRef = useRef<FormHandles>(null)
   const history = useHistory()
   const { token, user } = useAuth()
+  const [isVisibleModal, setIsVisibleModal] = useState(false)
   const [selectedFile, setSelectedFile] = useState<File>()
 
   const handleSubmit = useCallback(
@@ -60,9 +62,11 @@ const Register: React.FC = () => {
           }
         })
 
-        window.alert('Ponto criado')
+        setIsVisibleModal(true)
 
-        history.push('/dashboard')
+        setTimeout(() => {
+          history.push('/user-items')
+        }, 3000)
       } catch (err) {
         if (err instanceof Yup.ValidationError) {
           const errors = getValidationErrors(err)
@@ -107,6 +111,17 @@ const Register: React.FC = () => {
           </Form>
         </section>
       </Content>
+
+      {isVisibleModal && (
+        <MessageModal
+          title='Sucesso'
+          description='O cadastro do item foi concluido. Voce será redirecionado para seus itens.'
+          color='green'
+          onClose={() => {
+            setIsVisibleModal(false)
+          }}
+        />
+      )}
     </Container>
   )
 }

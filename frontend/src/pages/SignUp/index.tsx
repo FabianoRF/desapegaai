@@ -3,7 +3,6 @@ import { FiLogIn, FiMail, FiLock, FiUser, FiArrowLeft } from 'react-icons/fi'
 import { Form } from '@unform/web'
 import { FormHandles } from '@unform/core'
 import { Link, useHistory } from 'react-router-dom'
-
 import * as Yup from 'yup'
 
 import signUpIlustration from '../../assets/signUpIlustration.svg'
@@ -91,7 +90,7 @@ const SignUp: React.FC = () => {
       <Container>
         <Content>
           <h1>Desapega aí</h1>
-          <h2>Login</h2>
+          <h2>Cadastre-se</h2>
           <Form ref={formRef} onSubmit={handleSubmit}>
             <Input icon={FiUser} name='name' placeholder='Nome' />
             <Input icon={FiMail} name='email' placeholder='E-mail' />
@@ -104,7 +103,7 @@ const SignUp: React.FC = () => {
 
             <Button type='submit'>
               <FiLogIn size={25} />
-              Entrar
+              Cadastrar
             </Button>
           </Form>
 
